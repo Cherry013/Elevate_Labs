@@ -36,7 +36,7 @@ public class CRUD {
                 System.out.print("Id: ");
                 int k = sc.nextInt();
                 /* To check the Duplicates */
-                if(check(k) >0){
+                if(check(k) >=0){
                     System.out.println("Id already exists in records present re-enter, you have"+(5-f)+" tries");
                     if (f>=5){break;}
                     continue;
@@ -76,7 +76,7 @@ public class CRUD {
         System.out.print("Enter the Id of the record you want to change : ");
         int k=sc.nextInt();
         k=check(k);
-        if (k > 0) {
+        if (k >= 0) {
             System.out.println("Enter the Changes...");
             System.out.print("Id: ");
             int id = sc.nextInt();
