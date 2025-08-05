@@ -148,8 +148,6 @@ public class Student_Records{
                         break;
                 }
 
-                System.gc();
-
             } else {
                 System.out.println("Thanks for Using the program \n");
                 break;
