@@ -57,6 +57,7 @@ public class CRUD {
             }
         }
 
+        System.out.println("\n");
         view();
 
     }
@@ -77,19 +78,42 @@ public class CRUD {
         int k=sc.nextInt();
         k=check(k);
         if (k >= 0) {
-            System.out.println("Enter the Changes...");
-            System.out.print("Id: ");
-            int id = sc.nextInt();
-            System.out.print("Name: ");
-            String na = sc.next();
-            System.out.print("Marks: ");
-            int ma = sc.nextInt();
-            Student s = new Student(id, na, ma);
-            stu.set(k, s);
+            System.out.println("1. Id   2. Name   3. Marks");
+            System.out.print("What do you want to update '1' or '2' or '3'?..");
+            int u=sc.nextInt();
+
+            switch (u) {
+                case 1:System.out.print("Enter the new Id: ");
+                    int s = sc.nextInt();
+                    int ch = check(s);
+                    if (ch<0 || ch==k) {
+                        stu.get(k).Id = s;
+                        System.out.println("Id Changed Successfully");
+                    }
+                    else{
+                        System.out.println("Id Already exists");
+                    }
+                    break;
+                case 2: System.out.print("Name: ");
+                    String na = sc.next();
+                    stu.get(k).Name = na;
+                    System.out.println("Name Changed Successfully");
+                    break;
+                case 3: System.out.print("Marks: ");
+                    int ma = sc.nextInt();
+                    stu.get(k).Marks = ma;
+                    System.out.println("Marks Changed Successfully");
+                    break;
+            
+                default: System.out.println("Wrong choice Entered");
+                    break;
+            }
         } else{
             System.out.println("Id Does not exist in the records");
         }
-
+        
+        System.out.println("\n");
+        view();
         
     }
 
@@ -118,5 +142,8 @@ public class CRUD {
         else{
             System.out.println("Wrong Choice Entered");
         }
+
+        System.out.println("\n");
+        view();
     }
 }
