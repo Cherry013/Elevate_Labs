@@ -56,7 +56,7 @@ public class Bank {
         }
     }
 
-    //Method for display users list
+    //Method for display user list
    public void view_user() {
     if (list.isEmpty()) {
         System.out.println("No users are available to display.");

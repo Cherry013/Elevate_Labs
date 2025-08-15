@@ -1,8 +1,8 @@
-public class User {
+public class Users {
     private int id;
     private String name;
 
-    public User(int id, String name) {
+    public Users(int id, String name) {
         this.id = id;
         this.name = name;
     }

@@ -2,14 +2,14 @@ import java.util.*;
 
 public class Library {
     private List<Book> books = new ArrayList<>();
-    private List<User> users = new ArrayList<>();
+    private List<Users> users = new ArrayList<>();
     private Map<Integer, Integer> issuedBooks = new HashMap<>(); // BookID -> UserID
 
     public void addBook(Book book) {
         books.add(book);
     }
 
-    public void addUser(User user) {
+    public void addUser(Users user) {
         users.add(user);
     }
 
@@ -20,19 +20,19 @@ public class Library {
     }
 
     public void showUsers() {
-        for (User u : users) {
+        for (Users u : users) {
             System.out.println(u);
         }
     }
 
     public void issueBook(int bookId, int userId) {
         Book book = findBook(bookId);
-        User user = findUser(userId);
+        Users us = findUser(userId);
 
-        if (book != null && user != null && book.isAvailable()) {
+        if (book != null && us != null && book.isAvailable()) {
             book.setAvailable(false);
             issuedBooks.put(bookId, userId);
-            System.out.println("Book issued to " + user.getName());
+            System.out.println("Book issued to " + us.getName());
         } else {
             System.out.println("Book not available or invalid ID.");
         }
@@ -57,8 +57,8 @@ public class Library {
         return null;
     }
 
-    private User findUser(int userId) {
-        for (User u : users) {
+    private Users findUser(int userId) {
+        for (Users u : users) {
             if (u.getId() == userId) return u;
         }
         return null;

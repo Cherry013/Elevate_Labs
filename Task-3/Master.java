@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Master {
     public static void main(String[] args) {
         Library library = new Library();
         Scanner sc = new Scanner(System.in);
@@ -11,10 +11,10 @@ public class Main {
         library.addBook(new Book(3, "Python Crash Course", "Eric Matthes"));
         library.addBook(new Book(4, "Harry Potter", "J. K. Rowling"));
         library.addBook(new Book(5, "The Lord of the Rings", "J.R.R. Tolkien"));
-        library.addUser(new User(1, "Ramu"));
-        library.addUser(new User(2, "Pavan"));
-        library.addUser(new User(3, "Cherry"));
-        library.addUser(new User(4, "Cherry"));
+        library.addUser(new Users(1, "Ramu"));
+        library.addUser(new Users(2, "Pavan"));
+        library.addUser(new Users(3, "Cherry"));
+        library.addUser(new Users(4, "Cherry"));
         while (true) {
             System.out.println("\n--- Library Menu ---");
             System.out.println("1. Show Books");
